@@ -33,6 +33,57 @@
 
   /* Header */
   header { padding: 88px 0 48px; border-bottom: 1px solid var(--line); }
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .header-text { flex: 1; min-width: 260px; }
+  .portrait {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+    filter: grayscale(15%);
+  }
+
+  /* Media gallery */
+  .video-wrap {
+    margin-bottom: 24px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-wrap video { width: 100%; display: block; }
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media (min-width: 560px) { .gallery { grid-template-columns: 1fr 1fr 1fr; } }
+  .gallery figure {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--accent-soft);
+  }
+  .gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery figcaption {
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding: 7px 10px;
+    font-style: italic;
+  }
   h1 {
     font-family: 'Fraunces', serif;
     font-weight: 600;
@@ -167,8 +218,13 @@
 <div class="wrap">
 
   <header>
-    <h1 class="fade">Javeria Azfar</h1>
-    <p class="tagline fade">Robotics researcher working on autonomous-vehicle perception and human-aware navigation.</p>
+    <div class="header-top">
+      <div class="header-text">
+        <h1 class="fade">Javeria Azfar</h1>
+        <p class="tagline fade">Robotics researcher working on autonomous-vehicle perception and human-aware navigation.</p>
+      </div>
+      <img class="portrait fade" src="me.jpg" alt="Javeria Azfar">
+    </div>
     <nav class="links fade">
       <a href="mailto:azfarjiya1@gmail.com">Email</a>
       <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
@@ -182,6 +238,30 @@
     <h2>About</h2>
     <p class="lead">I'm a computer engineer (B.Sc., Habib University, 2025) with two years of hands-on robotics experience, currently a researcher and technical lead at Habib University's Office of Research.</p>
     <p>I work on the perception and decision-making systems of an autonomous industrial tow truck — the first autonomous vehicle of its kind deployed in a Pakistani industrial setting, built in collaboration with Toyota Indus Motor Company. My research interest sits at the intersection of learned perception and human-aware navigation: how robots can read the visual and social cues humans use to move through shared spaces, with industrial autonomous mobile robots as the primary application domain. I'm currently applying to fully funded graduate programs.</p>
+  </section>
+
+  <section id="media">
+    <h2>The Autonomous Tow Truck</h2>
+    <div class="video-wrap">
+      <video controls preload="metadata" playsinline>
+        <source src="truck.mp4" type="video/mp4">
+        Your browser doesn't support embedded video.
+      </video>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="project1.jpg" alt="Autonomous tow truck">
+        <figcaption>Replace caption</figcaption>
+      </figure>
+      <figure>
+        <img src="project2.jpg" alt="Autonomous tow truck">
+        <figcaption>Replace caption</figcaption>
+      </figure>
+      <figure>
+        <img src="project3.jpg" alt="Autonomous tow truck">
+        <figcaption>Replace caption</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section id="research">
