@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javeria Azfar</title>
+<meta name="description" content="Javeria Azfar — robotics researcher working on autonomous vehicle perception and human-aware navigation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --ink: #1c1b18;
+    --muted: #6b665c;
+    --line: #ddd8cd;
+    --accent: #8a4b2f;
+    --accent-soft: #f0e8df;
+    --maxw: 760px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 24px;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+  /* Header */
+  header { padding: 88px 0 48px; border-bottom: 1px solid var(--line); }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .tagline {
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin-top: 14px;
+    font-style: italic;
+  }
+  .links {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+  }
+  .links a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 1px;
+    transition: color .2s, border-color .2s;
+  }
+  .links a:hover { color: var(--accent); border-color: var(--ink); }
+
+  /* Sections */
+  section { padding: 52px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  p { margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+  a.inline { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--line); }
+  a.inline:hover { border-color: var(--accent); }
+
+  /* About lead */
+  .lead { font-size: 1.25rem; line-height: 1.55; }
+
+  /* Project / item blocks */
+  .item { margin-bottom: 38px; }
+  .item:last-child { margin-bottom: 0; }
+  .item h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .meta {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+  .item ul { list-style: none; }
+  .item li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 9px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+  .item li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  .tag-row {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .tag {
+    font-family: 'Fraunces', serif;
+    font-size: 0.78rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 3px 11px;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Publications */
+  .pub { margin-bottom: 22px; font-size: 0.98rem; line-height: 1.5; }
+  .pub:last-child { margin-bottom: 0; }
+  .pub .pub-title { font-style: italic; }
+  .pub .pub-venue { color: var(--muted); }
+
+  /* Skills grid */
+  .skills { display: grid; grid-template-columns: 1fr; gap: 18px; }
+  @media (min-width: 560px) { .skills { grid-template-columns: 1fr 1fr; } }
+  .skill-group h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  .skill-group p { font-size: 0.92rem; color: var(--muted); margin: 0; }
+
+  /* Footer */
+  footer {
+    padding: 44px 0 80px;
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-family: 'Fraunces', serif;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* Entrance animation */
+  .fade { opacity: 0; transform: translateY(14px); animation: rise .7s ease forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  header .fade:nth-child(1) { animation-delay: .05s; }
+  header .fade:nth-child(2) { animation-delay: .18s; }
+  header .fade:nth-child(3) { animation-delay: .31s; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1 class="fade">Javeria Azfar</h1>
+    <p class="tagline fade">Robotics researcher working on autonomous-vehicle perception and human-aware navigation.</p>
+    <nav class="links fade">
+      <a href="mailto:azfarjiya1@gmail.com">Email</a>
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Javeria_Azfar_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lead">I'm a computer engineer (B.Sc., Habib University, 2025) with two years of hands-on robotics experience, currently a researcher and technical lead at Habib University's Office of Research.</p>
+    <p>I work on the perception and decision-making systems of an autonomous industrial tow truck — the first autonomous vehicle of its kind deployed in a Pakistani industrial setting, built in collaboration with Toyota Indus Motor Company. My research interest sits at the intersection of learned perception and human-aware navigation: how robots can read the visual and social cues humans use to move through shared spaces, with industrial autonomous mobile robots as the primary application domain. I'm currently applying to fully funded graduate programs.</p>
+  </section>
+
+  <section id="research">
+    <h2>Research &amp; Projects</h2>
+
+    <div class="item">
+      <h3>Autonomous Industrial Tow Truck — Perception &amp; Decision-Making</h3>
+      <p class="meta">Habib University Office of Research, in collaboration with Toyota Indus Motor Company · Aug 2025 – present</p>
+      <ul>
+        <li>Contributed to a dual-Livox-MID360 3D-LiDAR perception layer that replaced a single forward-facing camera (87° horizontal field of view, no lateral or rear sensing) with full 360° coverage and no blind spots at 20 m+ detection range — field-validated for around-the-corner obstacle anticipation and full coverage through U-turns.</li>
+        <li>Helped optimize sensor placement, inverting the LiDAR to bias vertical coverage toward the ground for improved detection of low obstacles (pallets, carts, curbs), and refined the perception codebase to reduce detection latency.</li>
+        <li>Own the systems-engineering workflow in Innoslate (requirements, traceability, verification plans) and manage milestones, issue tracking, and sprint planning in Jira across the perception, control, and navigation sub-teams.</li>
+        <li>Mentor and supervise three undergraduates building components of the perception pipeline for their capstone projects.</li>
+        <li>Collaborate with Toyota's engineering team on deployment testing and integration in a live industrial environment.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">ROS 2 (Humble)</span><span class="tag">Autoware</span><span class="tag">Livox MID360</span><span class="tag">NDT localization</span><span class="tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3>Robust Vision System for Autonomous Tow Truck</h3>
+      <p class="meta">Habib University · Fall 2024 – Spring 2025</p>
+      <ul>
+        <li>Developed and optimized real-time object detection and depth estimation pipelines using a customized YOLOv5 architecture and an Intel RealSense D435i camera.</li>
+        <li>Integrated visual perception modules into a ROS 2 Nav2 framework for autonomous navigation and obstacle avoidance in semi-structured industrial environments.</li>
+        <li>Containerized the full perception–planning system in Docker for reproducible deployment and modular testing.</li>
+        <li>Validated the system through hardware-in-the-loop simulations in Gazebo and field testing at IMC Port Qasim.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">ROS 2</span><span class="tag">Gazebo</span><span class="tag">PyTorch</span><span class="tag">YOLOv5</span><span class="tag">C++</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3>Zero-Shot &amp; Few-Shot Learning for Human-Motion Analysis (Survey)</h3>
+      <p class="meta">Habib University · Spring 2025</p>
+      <ul>
+        <li>Co-authored a survey of 30+ recent methods (MotionGPT, ZeDO, FG-MDM, PAML) across Human3.6M and AMASS using MPJPE, PA-MPJPE, and PCKh.</li>
+        <li>Proposed a taxonomy unifying meta-learning, generative, and optimization-based strategies for human-motion analysis with vision-language models.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">Vision-Language Models</span><span class="tag">Human-Motion Analysis</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3>Diet Plan Optimization Using Evolutionary Algorithms</h3>
+      <p class="meta">Habib University · Spring 2024</p>
+      <ul>
+        <li>Built a multi-objective genetic algorithm generating optimized athlete diet plans balancing nutrition and performance; tuned fitness functions and evolutionary operators (elitism, crossover, mutation) for convergence and diversity. Published at EvoStar 2025 (see below).</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag">Python</span><span class="tag">MOGA</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <div class="pub">
+      Azfar, I., Shahab, R., Azfar, J., &amp; Raza, S.S. (2025). <span class="pub-title">Optimizing Dietary Plans Using Evolutionary Algorithms.</span> <span class="pub-venue">Lecture Notes in Computer Science, vol. 15612 (pp. 3–19).</span> <a class="inline" href="https://doi.org/10.1007/978-3-031-90062-4_1" target="_blank" rel="noopener">doi.org/10.1007/978-3-031-90062-4_1</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h4>Robotics &amp; Perception</h4>
+        <p>ROS 2 (Humble), Autoware, Gazebo, RViz, 3D LiDAR (Livox MID360), NDT localization, point-cloud processing, RealSense RGB-D</p>
+      </div>
+      <div class="skill-group">
+        <h4>Machine Learning &amp; CV</h4>
+        <p>PyTorch, TensorFlow, OpenCV, YOLO</p>
+      </div>
+      <div class="skill-group">
+        <h4>Programming</h4>
+        <p>Python, C/C++, Verilog, JavaScript, HTML/CSS, LaTeX, SQL</p>
+      </div>
+      <div class="skill-group">
+        <h4>Tools &amp; Workflow</h4>
+        <p>Linux, Docker, Git/GitHub, Jira, Innoslate (systems engineering)</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Karachi, Pakistan · <a href="mailto:azfarjiya1@gmail.com">azfarjiya1@gmail.com</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
