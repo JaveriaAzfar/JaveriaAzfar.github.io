@@ -57,8 +57,16 @@
     border-radius: 3px;
     overflow: hidden;
     background: #000;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
   }
-  .video-wrap video { width: 100%; display: block; }
+  .video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
   .gallery {
     display: grid;
     grid-template-columns: 1fr;
@@ -243,10 +251,7 @@
   <section id="media">
     <h2>The Autonomous Tow Truck</h2>
     <div class="video-wrap">
-      <video controls preload="metadata" playsinline>
-        <source src="truck.mp4" type="video/mp4">
-        Your browser doesn't support embedded video.
-      </video>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Autonomous tow truck" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="gallery">
       <figure>
